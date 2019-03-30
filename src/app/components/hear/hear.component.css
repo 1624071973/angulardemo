@@ -1,16 +1,1 @@
 
-.btn.focus, .btn:focus, .btn:hover {
-  color: #333;
-  text-decoration: none;
-}
-.dropdown-menu .divider {
-  height: 1px;
-  margin: 9px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
-}
-
-li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-}

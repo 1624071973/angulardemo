@@ -1,14 +1,46 @@
 .orderMenu{
-  list-style:none
+  list-style:none;
+  margin: 0;
+  padding: 12px;
+  height: 100px;
 }
 .orderMenu li {
   display: inline-block;
   font-family: Calibri, serif;
   font-size: 25px;
+
+}
+.order {
+  margin: 0;
+  background-color: azure;
 }
 a{
-  text-decoration:none
+  text-decoration:none;
+
+}
+.divider {
+  width: 1px;
+  height: 25px;
+  margin: 0px 10px;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #e5e5e5;
 }
 
+.orderList ul{
+
+  padding: 0;
+  border: lightsteelblue solid 1px;
+  text-align:center ;
+  margin: 0;
+}
+
+.orderList-item{
+  display: inline-block;
+  width: 800px;
+  height: 300px;
+  margin: 30px;
+  border: lightsteelblue solid 1px;
+}
 
 
