@@ -24,25 +24,26 @@
   <span>1+2={{1 + 2}}</span>
   <div>
     <h3>数组循环：</h3>
-<ul>
-  <li *ngFor="let item of movies">{{item}}</li>
-</ul>
-    
-<table>
-<tr>
-  <th>id</th>
-  <th>name</th>
-  <th>dataType</th>
-  <th>状态</th>
-  <th>操作</th>
-</tr>
+    <ul>
+      <li *ngFor="let item of movies">{{item}}</li>
+    </ul>
 
-<h3>ngClass/ngIf/ngSwitch演示</h3>
-<tr *ngFor="let item of dataProductList" >
-  <td>{{item.id}}</td>
-  <td>{{item.name}}</td>
-  <td>{{item.dataType}}</td>
-  <td><span [ngSwitch]="item.status" [ngClass]="{'red': item.status==0,'green':item.status==1,'gray':item.status==2}">
+    <table>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>dataType</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+
+      <h3>ngClass/ngIf/ngSwitch演示</h3>
+      <tr *ngFor="let item of dataProductList">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.dataType}}</td>
+        <td><span [ngSwitch]="item.status"
+                  [ngClass]="{'red': item.status==0,'green':item.status==1,'gray':item.status==2}">
   <p *ngSwitchCase="0">
   未发布
   </p>
@@ -53,10 +54,9 @@
   已下架
   </p>
   </span></td>
-  <td ><a *ngIf="item.status==0"  href="javaScript:void(0)">删除</a></td>
-</tr>
-</table>
-
+        <td><a *ngIf="item.status==0" href="javaScript:void(0)">删除</a></td>
+      </tr>
+    </table>
 
 
   </div>
