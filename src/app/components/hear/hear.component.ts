@@ -8,8 +8,12 @@ import {Component, OnInit} from '@angular/core';
 export class HearComponent implements OnInit {
 
 public date:any=new Date();
-
+flag:boolean=true;
   constructor() {
+  }
+  showLogin(){
+  this.flag=!this.flag;
+
   }
 
   ngOnInit() {

@@ -1,1 +1,12 @@
 
+
+  .layerOut-content {
+      width: 900px;
+      height: 300px;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+  }
+  .layerOut:focus .layerOut-content {
+    display: block;
+  }
