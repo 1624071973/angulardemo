@@ -1,0 +1,63 @@
+<div>
+  <p>
+    <b>
+      {{tltle}}
+    </b>
+  </p>
+
+  <p>
+    这是{{msg}}
+  </p>
+
+  <h3 style="color: chocolate">{{msg2}}</h3>
+
+  <h3 style="color: chocolate">{{dataProduct.id}}</h3>
+
+  <span title="这是一个提示" style="margin: 0 30px 100px 500px;height: 50px;background-color: aquamarine">鼠标悬停:静态绑定属性 title="这是一个提示"</span>
+  <span [title]="dataProduct.dataType" style="height: 50px;background-color: aquamarine">鼠标悬停:动态绑定属性 [title]="dataProduct.dataType" </span>
+
+
+  <div>不被解析：{{txtContent}}</div>
+  <div [innerHTML]="txtContent" style="color: darkolivegreen"></div>
+
+  <h3 style="display: inline">anular简单运算: </h3>
+  <span>1+2={{1 + 2}}</span>
+  <div>
+    <h3>数组循环：</h3>
+<ul>
+  <li *ngFor="let item of movies">{{item}}</li>
+</ul>
+    
+<table>
+<tr>
+  <th>id</th>
+  <th>name</th>
+  <th>dataType</th>
+  <th>状态</th>
+  <th>操作</th>
+</tr>
+
+<h3>ngClass/ngIf/ngSwitch演示</h3>
+<tr *ngFor="let item of dataProductList" >
+  <td>{{item.id}}</td>
+  <td>{{item.name}}</td>
+  <td>{{item.dataType}}</td>
+  <td><span [ngSwitch]="item.status" [ngClass]="{'red': item.status==0,'green':item.status==1,'gray':item.status==2}">
+  <p *ngSwitchCase="0">
+  未发布
+  </p>
+  <p *ngSwitchCase="1">
+  已发布
+  </p>
+  <p *ngSwitchCase="2">
+  已下架
+  </p>
+  </span></td>
+  <td ><a *ngIf="item.status==0"  href="javaScript:void(0)">删除</a></td>
+</tr>
+</table>
+
+
+
+  </div>
+</div>

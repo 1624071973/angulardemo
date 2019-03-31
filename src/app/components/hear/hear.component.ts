@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-hear',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HearComponent implements OnInit {
 
-  constructor() { }
+public date:any=new Date();
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

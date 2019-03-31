@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataMarketComponent } from './components/data-market/data-market.component';
 import { HearComponent } from './components/hear/hear.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataMarketComponent,
-    HearComponent
+    HearComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
