@@ -4,9 +4,9 @@
 
 <div class="people_list">
   <ul>
-    <li>姓 名：<input type="text" id="username" [(ngModel)]="peopleInfo.username" value="fonm_input" /></li>
+    <li>姓 名：<input type="text" id="username" [(ngModel)]="peopleInfo.username" value="peopleInfo.username" /></li>
 
-
+    <li>姓 名：<input type="text" id="username" [(ngModel)]="name"  /></li>
     <li>性 别：
       
 
@@ -21,12 +21,9 @@
     城 市：
       <select name="city" id="city" [(ngModel)]="peopleInfo.city">
 
-
-          <option [value]="item" *ngFor="let item of peopleInfo.cityList">{{item}}</option>
+          <option [value]="item" *ngFor="let item of cityList">{{item}}</option>
       </select>
-
-
-
+     
     </li>
 
     <li>
@@ -34,10 +31,10 @@
         爱 好：
          
         
-        <span *ngFor="let item of peopleInfo.hobby;let key=index;">
-            <input type="checkbox"  [id]="'check'+key" [(ngModel)]="item.checked"/> <label [for]="'check'+key"> {{item.title}}</label>
+        <span *ngFor="let item of hobbyList;let key=index;">
+            <!-- <input type="checkbox"  [id]="'check'+key" [(ngModel)]=" peopleInfo.hobby[key].checked"/> <label [for]="'check'+key"> {{item.title}}</label>
 
-            &nbsp;&nbsp;
+            &nbsp;&nbsp; -->
         </span>
     
     
@@ -62,6 +59,11 @@
   <button (click)="doSubmit()" class="submit">获取表单的内容</button>
 
 
+  <button (click)="gonext()" class="submit">xiayiye</button>
+
+  <!-- <a  routerLink="/DataMarket/{{peopleInfo}}">dddddddddd</a>
+  <a [routerLink]="[ '/DataMarket']" [queryParams]="{people:123x}">name</a>
+  <a [routerLink]="[ '/DataMarket/', peopleInfo]" >2222</a> -->
   <br>
   <br>
   <br>
@@ -74,6 +76,6 @@
 
     {{peopleInfo | json}}
   </pre>
-
+<p>{{name}}</p>
 
 </div>

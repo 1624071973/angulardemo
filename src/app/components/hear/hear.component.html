@@ -1,5 +1,5 @@
 <div id="hear" style="background-color: #B2CFE5;margin: 0 ;min-height: 100px;border: gray solid 1px">
-  <span><a style=" float: right"  (click)="showLogin()" href="javaScript:void(0)">登陆</a></span>
+
   
   <h1 id="title" style="text-align: center;">我来组成头部</h1>
 <b>{{date|date:'yyyy-MM-dd HH:mm:ss'}}</b>
@@ -18,7 +18,7 @@
         </a>
           <ul class="dropdown-content" >
             <li >
-              <a href="#">Java</a>
+               <a [routerLink]="[ '/Main']">name</a>
             </li>
             <li  class="divider"></li>
             <li >
@@ -40,3 +40,4 @@
 
 
 </div>
+<router-outlet ></router-outlet>

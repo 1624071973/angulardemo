@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import{Router,NavigationExtras} from '@angular/router';
+import{CommonService} from '../../services/common.service';
+import{ActivatedRoute} from '@angular/router';
+import{people} from '../../model/people';
+
 
 @Component({
   selector: 'app-login',
@@ -7,34 +12,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  public peopleInfo:any={
+public cityList:any[]=['北京','上海','深圳'];
 
-    username:'',
-    sex:'2',
-    cityList:['北京','上海','深圳'],
-    city:'上海',
+public  hobbyList:any[]=[
+  {
+  title:'吃饭',
+  checked:false
+},{
 
-    hobby:[{
+    title:'睡觉',
+    checked:false
+},{
 
-          title:'吃饭',
-          checked:false
-      },{
+  title:'敲代码',
+  checked:true
+}]
 
-            title:'睡觉',
-            checked:false
-        },{
+public name:any;
+public peopleInfo:people=this.people
 
-          title:'敲代码',
-          checked:true
-      }],
+  constructor(protected route:ActivatedRoute,protected commonService:CommonService,protected router:Router,private people:people) {
+    console.log(this.commonService.getinfo(1))
+    let v:people =this.commonService.getinfo(1);
 
-      mark:''
-
-  }
-
-  constructor() { }
+    if(v!=null){
+      this.peopleInfo=v
+    }
+   
+   
+   }
 
   ngOnInit() {
+    
+   
   }
 
   doSubmit(){
@@ -46,10 +56,25 @@ export class LoginComponent implements OnInit {
       let usernameDom:any=document.getElementById('username');
       console.log(usernameDom.value);    
     */
+  
+    this.commonService.setinfo('info',this.peopleInfo);
+    this.router.navigate(['/DataMarket']);
 
-
-    console.log(this.peopleInfo);
+    // let queryParams: NavigationExtras = {
+    //   queryParams: { 
+    //     'peolpe': {"username":"","sex":"1","city":"","hobby":[{"title":"吃饭","checked":false},{"title":"睡觉","checked":false},{"title":"敲代码","checked":true}],"mark":""} ,
+    //     'name':'111'},
+    //   fragment: 'anchor'
+    //   };
+    // this.router.navigate(['/DataMarket'],queryParams);
+    
 
 
   }
+gonext(){
+  console.log(this.peopleInfo);    
+  this.router.navigate(['/DataMarket/',this.peopleInfo]);
+
+}
+
 }

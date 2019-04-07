@@ -15,6 +15,9 @@ import {DataMarketComponent} from './components/data-market/data-market.componen
 import {HearComponent} from './components/hear/hear.component';
 import {MainComponent} from './components/main/main.component';
 import {LoginComponent} from './components/login/login.component';
+import {CommonService} from './services/common.service';
+import{people} from './model/people';
+
 
 //NgModule装饰器，接受一个元数据对象，告诉angular如何编译和启动
 @NgModule({
@@ -23,7 +26,8 @@ import {LoginComponent} from './components/login/login.component';
     DataMarketComponent,
     HearComponent,
     MainComponent,
-    LoginComponent
+    LoginComponent,
+
 
   ],
   imports: [ //配置当前模块运行依赖的其他模块
@@ -31,7 +35,10 @@ import {LoginComponent} from './components/login/login.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],//配置项目所需的服务
+  providers: [
+    CommonService,
+    people
+  ],//配置项目所需的服务
   bootstrap: [AppComponent]//指定应用的主视图，通过引导模块引导AppMoudle启动应用，通常是根组件
 })
 //暴露当前模块

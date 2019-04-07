@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import{CommonService} from '../../services/common.service';
 
 @Component({
   selector: 'app-hear',
@@ -7,9 +8,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HearComponent implements OnInit {
 
-public date:any=new Date();
+
+
 flag:boolean=true;
-  constructor() {
+  constructor(private commonService:CommonService) {
   }
   showLogin(){
   this.flag=!this.flag;
