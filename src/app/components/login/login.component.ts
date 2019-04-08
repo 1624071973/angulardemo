@@ -33,8 +33,8 @@ public peopleInfo:people=this.people
 
   constructor(protected route:ActivatedRoute,protected commonService:CommonService,protected router:Router,private people:people) {
     console.log(this.commonService.getinfo(1))
-    let v:people =this.commonService.getinfo(1);
-
+    // let v:people =this.commonService.getinfo(1);
+let v = this.commonService.peopleInfo;
     if(v!=null){
       this.peopleInfo=v
     }
@@ -56,8 +56,8 @@ public peopleInfo:people=this.people
       let usernameDom:any=document.getElementById('username');
       console.log(usernameDom.value);    
     */
-  
-    this.commonService.setinfo('info',this.peopleInfo);
+  this.commonService.peopleInfo= this.peopleInfo;
+   // this.commonService.setinfo('info',this.peopleInfo);
     this.router.navigate(['/DataMarket']);
 
     // let queryParams: NavigationExtras = {

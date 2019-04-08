@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import{CommonService} from '../../services/common.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -47,7 +48,7 @@ export class MainComponent implements OnInit {
 
   isOption: boolean = true;
 
-  constructor(private router:Router) {
+  constructor(private router:Router,protected commonService:CommonService) {
     console.log(this.movies);
   }
 
@@ -55,6 +56,7 @@ export class MainComponent implements OnInit {
   }
 
   go(){
+    this.commonService.peopleInfo=null;
     this.router.navigate(['/Login']);
 
   }

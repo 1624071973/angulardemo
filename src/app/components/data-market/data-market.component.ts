@@ -15,7 +15,7 @@ export class DataMarketComponent   implements OnInit {
 
 
    
-    let v:people =this.commonService.getinfo(1);
+    let v:people = this.commonService.peopleInfo;
     if(v!=null){
       this.peopleInfo=v
     }
@@ -32,7 +32,7 @@ export class DataMarketComponent   implements OnInit {
 //     this.route.params.subscribe(date=> console.log('+++++++++'+date))
 
     console.log('*********'+JSON.stringify(this.peopleInfo) );
-    console.log('*********'+this.peopleInfo );
+
   }
 
   ngOnInit() {
